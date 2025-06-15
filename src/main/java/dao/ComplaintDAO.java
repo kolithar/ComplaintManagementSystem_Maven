@@ -44,4 +44,33 @@ public class ComplaintDAO {
         }
         return list;
     }
+
+    public static List<Complaint> getAllComplaints() {
+        List<Complaint> complaints = new ArrayList<>();
+        String sql = "SELECT * FROM complaints";
+
+        try (Connection conn = DBConnection.getDataSource().getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Complaint c = new Complaint(
+                        rs.getInt("id"),
+                        rs.getString("title"),
+                        rs.getString("description"),
+                        rs.getInt("user_id"),
+                        rs.getString("status")
+                );
+                complaints.add(c);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error fetching all complaints: " + e.getMessage());
+        }
+
+        return complaints;
+    }
+
+
+
 }
