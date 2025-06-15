@@ -10,7 +10,7 @@
 <head><title>Submit Complaint</title></head>
 <body>
 <h2>Submit a New Complaint</h2>
-<form method="post" action="../ComplaintServlet">
+<form method="post" action="<%= request.getContextPath() %>/ComplaintServlet">
     <label>Title:</label><input type="text" name="title" required /><br/>
     <label>Description:</label><textarea name="description" required></textarea><br/>
     <input type="submit" value="Submit Complaint" />

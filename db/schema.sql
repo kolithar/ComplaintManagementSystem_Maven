@@ -19,3 +19,7 @@ CREATE TABLE complaints (
 
 INSERT INTO users (username, password, role) VALUES
 ('navi', '12345', 'Admin');
+
+
+INSERT INTO users (username, password, role) VALUES
+    ('kasun', '123456', 'Employee');
