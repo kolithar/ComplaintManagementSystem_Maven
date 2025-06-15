@@ -23,3 +23,7 @@ INSERT INTO users (username, password, role) VALUES
 
 INSERT INTO users (username, password, role) VALUES
     ('kasun', '123456', 'Employee');
+
+INSERT INTO users (username, password, role) VALUES
+    ('sunil', '1234567', 'Employee');
+

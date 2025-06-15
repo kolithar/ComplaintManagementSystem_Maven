@@ -25,8 +25,28 @@
         <td><%= c.getUserId() %></td>
         <td><%= c.getStatus() %></td>
     </tr>
+
+
+    <td>
+        <form action="../DeleteComplaintServlet" method="post" onsubmit="return confirm('Are you sure you want to delete this complaint?');">
+            <input type="hidden" name="id" value="<%= c.getId() %>" />
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+        </form>
+    </td>
+
+
+
+
     <% } %>
+
+
+
+
+
+
 </table>
+
+
 <p><a href="dashboard.jsp">Back to Dashboard</a></p>
 </body>
 </html>
