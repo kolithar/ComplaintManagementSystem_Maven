@@ -7,6 +7,14 @@ public class Complaint {
     private int userId;
     private String status;
 
+    private String remarks;
+
+    public String getRemarks() { return remarks; }
+    public void setRemarks(String remarks) { this.remarks = remarks; }
+
+
+
+
     public Complaint(int id, String title, String description, int userId, String status) {
         this.id = id;
         this.title = title;
@@ -20,9 +28,6 @@ public class Complaint {
         this.description = description;
         this.userId = userId;
     }
-
-
-
 
 
     public int getId() { return id; }

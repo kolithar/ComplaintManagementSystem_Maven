@@ -83,6 +83,21 @@ public class ComplaintDAO {
     }
 
 
+    public static boolean updateStatusAndRemarks(int complaintId, String status, String remarks) {
+        String sql = "UPDATE complaints SET status = ?, remarks = ? WHERE id = ?";
+        try (Connection conn = DBConnection.getDataSource().getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, status);
+            ps.setString(2, remarks);
+            ps.setInt(3, complaintId);
+            return ps.executeUpdate() > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
 
 
 }

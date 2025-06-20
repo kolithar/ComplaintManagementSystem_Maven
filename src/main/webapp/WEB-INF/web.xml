@@ -46,6 +46,14 @@
         <url-pattern>/DeleteComplaintServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UpdateComplaintServlet</servlet-name>
+        <servlet-class>controller.UpdateComplaintServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateComplaintServlet</servlet-name>
+        <url-pattern>/UpdateComplaintServlet</url-pattern>
+    </servlet-mapping>
 
 
 
