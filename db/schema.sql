@@ -8,14 +8,17 @@ CREATE TABLE users (
     role ENUM('Employee','Admin') NOT NULL
 );
 
+
 CREATE TABLE complaints (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
     description TEXT,
+    status VARCHAR(50) DEFAULT 'Pending',
+    remarks VARCHAR(500) DEFAULT '',
     user_id INT,
-    status VARCHAR(50),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
 
 INSERT INTO users (username, password, role) VALUES
 ('navi', '12345', 'Admin');
